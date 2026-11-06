@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111827">
+  <title>Calculadora clásica</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script defer src="{{ url_for('static', filename='app.js') }}"></script>
+</head>
+<body>
+  <main class="calculator" aria-label="Calculadora clásica">
+    <div class="heading"><span class="brand">CALC</span><span class="brand-sub">CLÁSICA</span></div>
+    <div class="screen" aria-live="polite" aria-atomic="true">
+      <div class="expression" id="expression">&nbsp;</div>
+      <output class="display" id="display">0</output>
+    </div>
+    <p class="error" id="error" role="alert" hidden></p>
+    <div class="keys">
+      <button class="key utility" data-action="clear" aria-label="Borrar todo">AC</button>
+      <button class="key utility" data-action="delete" aria-label="Borrar último dígito">⌫</button>
+      <button class="key utility" data-action="sign" aria-label="Cambiar signo">±</button>
+      <button class="key operator" data-operator="/" aria-label="Dividir">÷</button>
+
+      <button class="key" data-digit="7">7</button>
+      <button class="key" data-digit="8">8</button>
+      <button class="key" data-digit="9">9</button>
+      <button class="key operator" data-operator="*" aria-label="Multiplicar">×</button>
+
+      <button class="key" data-digit="4">4</button>
+      <button class="key" data-digit="5">5</button>
+      <button class="key" data-digit="6">6</button>
+      <button class="key operator" data-operator="-" aria-label="Restar">−</button>
+
+      <button class="key" data-digit="1">1</button>
+      <button class="key" data-digit="2">2</button>
+      <button class="key" data-digit="3">3</button>
+      <button class="key operator" data-operator="+" aria-label="Sumar">+</button>
+
+      <button class="key zero" data-digit="0">0</button>
+      <button class="key" data-action="decimal">.</button>
+      <button class="key equals" data-action="equals" aria-label="Igual">=</button>
+    </div>
+    <footer>Admite teclado · Cálculos realizados en el servidor</footer>
+  </main>
+</body>
+</html>
